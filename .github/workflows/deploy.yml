@@ -10,7 +10,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      ALGOLIA_INDEX_NAME: ${{ secrets.ALGOLIA_INDEX_NAME }}  # if you kept it as a secret
+      ALGOLIA_INDEX_NAME: "volunteer_idealist_Goodacts"  # if you kept it as a secret
       CRON_ENABLED: true
       WAIT_SECONDS: 0.2
     steps:
@@ -30,6 +30,6 @@ jobs:
       - name: Run Idealist Importer
         run: |
           export IDEALIST_AUTH_TOKEN="d8e1323d728601a6f9d9b1fc4a162060"
-          export ALGOLIA_APP_ID="${{ secrets.ALGOLIA_APP_ID }}"
-          export ALGOLIA_API_KEY="${{ secrets.ALGOLIA_API_KEY }}"
+          export ALGOLIA_APP_ID="92CHORLCOD"
+          export ALGOLIA_API_KEY="680cd7887ae9b0e30f9734042b7a7abd"
           python -m importer.cron
