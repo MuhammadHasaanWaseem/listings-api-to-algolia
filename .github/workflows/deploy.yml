@@ -13,6 +13,8 @@ jobs:
       ALGOLIA_INDEX_NAME: "volunteer_idealist_Goodacts"  # if you kept it as a secret
       CRON_ENABLED: true
       WAIT_SECONDS: 0.2
+      # /data is not available on GitHub-hosted runners (production uses Disco volume).
+      IMPORTER_STATE_FILE: ${{ github.workspace }}/.importer-state/db.json
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3

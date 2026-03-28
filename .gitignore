@@ -167,6 +167,9 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
+# Importer cron state (CI / local override of IMPORTER_STATE_FILE)
+.importer-state/
+
 # Ruff stuff:
 .ruff_cache/
 
