@@ -10,10 +10,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      IDEALIST_AUTH_TOKEN: ${{ secrets.IDEALIST_AUTH_TOKEN }}
-      ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
-      ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
-      ALGOLIA_INDEX_NAME: ${{ secrets.ALGOLIA_INDEX_NAME }}
+      ALGOLIA_INDEX_NAME: ${{ secrets.ALGOLIA_INDEX_NAME }}  # if you kept it as a secret
       CRON_ENABLED: true
       WAIT_SECONDS: 0.2
     steps:
@@ -31,4 +28,8 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run Idealist Importer
-        run: python -m importer.cron
+        run: |
+          export IDEALIST_AUTH_TOKEN="d8e1323d728601a6f9d9b1fc4a162060"
+          export ALGOLIA_APP_ID="${{ secrets.ALGOLIA_APP_ID }}"
+          export ALGOLIA_API_KEY="${{ secrets.ALGOLIA_API_KEY }}"
+          python -m importer.cron

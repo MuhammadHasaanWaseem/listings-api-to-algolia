@@ -14,7 +14,7 @@ and it's also an example of how to read the Listings API.
 
 ## Deploying
 
-Copy `disco.example.json` to `disco.json`, fill in `env` and `github`, then deploy on [Disco](https://disco.cloud) (see `disco.json` in `.gitignore` so secrets stay local).
+The project includes a `disco.json` file to deploy the project on [Disco](https://disco.cloud).
 
 To deploy on your instance, clone this repo and push to a new private repo that you own.
 

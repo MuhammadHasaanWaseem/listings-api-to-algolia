@@ -129,8 +129,6 @@ celerybeat.pid
 
 # Environments
 .env
-# Disco: local file may contain secrets (use disco.example.json as template)
-disco.json
 .venv
 env/
 venv/
